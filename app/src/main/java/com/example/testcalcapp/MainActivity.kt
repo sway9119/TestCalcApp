@@ -1,5 +1,6 @@
 package com.example.testcalcapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -37,7 +38,10 @@ class MainActivity : AppCompatActivity() {
                 val price = Integer.parseInt(priceText)
                 val discount = Integer.parseInt(discountText)
 
-                // TODO: 計算結果画面への画面繊維する
+                                                                                                                 val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("price", price)
+                intent.putExtra("discount", discount)
+                startActivity(intent)
             }
         }
     }
